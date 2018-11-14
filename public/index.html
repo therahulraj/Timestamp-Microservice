@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Timestamp Microservice</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+  <div class="data">
+    <div class="data-inside">
+      <h3>API Project: Timestamp Microservice</h3>
+      <h5>User Stories (WIP):</h5>
+      <p>1. The API endpoint is <code>GET [project_url]/api/timestamp/:date_string?</code></p>
+      <p>2. A date string is valid if can be successfully parsed by <code>new Date(date_string)</code>.
+         Note that the unix timestamp needs to be an integer (not a string) specifying milliseconds.
+         In our test we will use date strings compliant with ISO-8601 (e.g. "2016-11-20") because this will ensure an UTC timestamp.</p>
+      <p>3. If the date string is empty it should be equivalent to trigger new Date(), i.e. the service uses the current timestamp.</p>
+      <p>4. If the date string is valid the api returns a JSON having the structure
+          <code>{"unix": <date.getTime()>, "utc" : <date.toUTCString()> }</code><br>
+          e.g. <code>{"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}</code></p>
+      <p>5. If the date string is invalid the api returns a JSON having the structure<br>
+        <code>{"error" : "Invalid Date" }</code></p>
+        <h5>Example Usage</h5>
+        <p>
+          <a href="/api/timestamp/2015-12-25">[project url]/api/timestamp/2015-12-25</a><br>
+          <a href="/api/timestamp/1450137600">[project url]/api/timestamp/1450137600</a>
+        </p>
+        <h5>Example Output:</h5>
+        <p><code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code></p>
+        <br>
+        <p>by <a href="">Rahul Raj</a></p>
+    </div>
+  </div>
+</body>
+</html>
